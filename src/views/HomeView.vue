@@ -1,5 +1,8 @@
+<script setup>
+import HeaderComponent from '@/components/HeaderComponent.vue'
+
+</script>
+
 <template>
-  <main>
-    hello world
-  </main>
+  <HeaderComponent />
 </template>
