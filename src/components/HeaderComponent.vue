@@ -32,7 +32,7 @@ import { RouterLink } from 'vue-router'
         </nav>
         <nav class="account-nav">
             <div>
-                <RouterLink>
+                <RouterLink class="account-btn" to="/auth/login">
                     <h3>MINHA CONTA</h3>
                     <p>Entrar/Cadastro</p>
                 </RouterLink>
@@ -119,9 +119,12 @@ import { RouterLink } from 'vue-router'
     .invert-svg {
         filter: invert(100%);
     }
-    .account-nav{
+    .account-nav {
         display: flex;
         align-items: center;
+    }
+    .account-btn:hover {
+        color: white;
     }
     
     .button-nav {
