@@ -1,19 +1,33 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+
+defineProps({
+    title: String,
+    img: String,
+    desc: String,
+    promotion: Number,
+    price: Number,
+    oldPrice: Number,
+    to: String,
+});
+
+</script>
 <template>
-    <div class="card">
+    <RouterLink class="card" :to="to">
         <div class="title">
-            <p>Oferta imperdível</p>
+            <p>{{ title }}</p>
         </div>
         <div class="img">
-            <img src="@/assets/images/televisao.png">
+            <img :src="img">
         </div>
         <div class="desc">
-            <p>Confira os custos e prazos de entrega</p>
+            <p>{{ desc }}</p>
         </div>
         <div class="price">
-            <span class="old-price">R$ 1899,00</span>
-            <p>R$ 1699,00 <span class="promotion">7%OFF</span></p>
+            <span class="old-price">R$ {{ String(oldPrice).replace('.',',') }}</span>
+            <p>R$ {{ price }} <span class="promotion">{{ (promotion * 100) }}%OFF</span></p>
         </div>
-    </div>
+    </RouterLink>
 </template>
 <style scoped>
 .card {
@@ -28,6 +42,8 @@
     gap: 0.5rem;
     cursor: pointer;
     transition: transform 0.2s;
+    color: black;
+    text-decoration: none;
 }
 .card:hover {
     transform: scale(1.05);
@@ -74,5 +90,9 @@
 
 .price p {
     margin-top: 0;
+}
+
+.price {
+    width: 100%;
 }
 </style>

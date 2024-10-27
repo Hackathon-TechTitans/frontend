@@ -1,6 +1,11 @@
 <script setup>
+import { RouterLink } from 'vue-router';
 
-const a = ['', '', '', '','', '', '', '','', '', '', '',];
+defineProps({
+    title: String,
+    itens: Array,
+})
+
 </script>
 <template>
     <div class="card">
@@ -8,14 +13,14 @@ const a = ['', '', '', '','', '', '', '','', '', '', '',];
             <h3>Categorias</h3>
         </div>
         <div class="itens">
-            <div class="item" v-for="aa in a" :key="aa">
+            <RouterLink class="item" v-for="item in itens" :key="item" :to="item.to">
                 <div class="img">
-                    <img src="@/assets/images/locate.png">
+                    <img :src="item.img">
                 </div>
                 <div class="title">
-                    <p>Carros, motos e outros</p>
+                    <p>{{ item.title }}</p>
                 </div>
-            </div>
+            </RouterLink>
         </div>
     </div>
 </template>
@@ -48,7 +53,7 @@ const a = ['', '', '', '','', '', '', '','', '', '', '',];
 
 .itens {
     display: flex;
-    gap: 1rem;
+    gap: 1rem 2rem;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
@@ -63,6 +68,8 @@ const a = ['', '', '', '','', '', '', '','', '', '', '',];
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s;
+    color: black;
+    text-decoration: none;
 }
 .item:hover {
     transform: scale(1.05);
