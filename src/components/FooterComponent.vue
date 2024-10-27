@@ -7,7 +7,7 @@
             <a href="">Devoluções e reembolsos</a>
             <a href="">Gerencie seu conteudo e dispositivos</a>
             <a href="">Ajuda</a>
-            <RouterLink class="diff" to="/"><img src="@/assets/images/logo.svg" alt="Logo" height="50"></RouterLink>
+            <RouterLink class="diff" to="/"><img src="@/assets/icons/logo.svg" alt="Logo" height="50"></RouterLink>
         </div>
         <div class="item">
             <p>Conheça-nos</p>
@@ -42,6 +42,7 @@
 </template>
 <style scoped>
 .material-symbols-outlined {
+    user-select: none;
     font-variation-settings:
         'FILL' 1,
         'wght' 400,
@@ -80,6 +81,7 @@
 
 .diff {
     margin-top: 1rem;
+    user-select: none;
 }
 
 .last {
@@ -91,9 +93,11 @@
     width: 200px;
     text-align: center;
 }
+
 .last h3 {
     margin: 0;
 }
+
 .last p {
     margin: 0;
 }
