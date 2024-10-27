@@ -1,11 +1,22 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+
+defineProps({
+    title: String,
+    img: String,
+    to: String,
+    toTitle: String,
+});
+
+</script>
 <template>
     <div class="card">
         <div class="title">
-            <p>ACHADINHOS DO DIA</p>
-            <button>VER MAIS</button>
+            <p>{{ title }}</p>
+            <RouterLink :to="to">{{ toTitle }}</RouterLink>
         </div>
         <div class="img">
-            <img src="@/assets/images/televisao.png">
+            <img :src="img">
         </div>
     </div>
 </template>
@@ -35,7 +46,7 @@
     text-align: center;
 }
 
-.title button {
+.title a {
     font-weight: 700;
     cursor: pointer;
     background-color: #66C0F2;
@@ -44,9 +55,14 @@
     border-radius: 8px;
     flex: 1;
     transition: transform 0.2s;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.title button:hover {
+.title a:hover {
     transform: scale(1.05);
 }
 

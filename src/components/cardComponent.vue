@@ -1,18 +1,30 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+
+defineProps({
+    title: String,
+    img: String,
+    desc: String,
+    btnText: String,
+    to: String,
+});
+
+</script>
 <template>
-    <div class="card">
+    <RouterLink class="card" :to="to">
         <div class="title">
-            <p>Insira sua localização</p>
+            <p>{{ title }}</p>
         </div>
         <div class="img">
-            <img src="@/assets/images/locate.png">
+            <img :src="img">
         </div>
         <div class="desc">
-            <p>Confira os custos e prazos de entrega</p>
+            <p>{{ desc }}</p>
         </div>
         <div class="btn">
-            <button>inserir localização</button>
+            <button>{{ btnText }}</button>
         </div>
-    </div>
+    </RouterLink>
 </template>
 <style scoped>
 .card {
@@ -25,6 +37,9 @@
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
+    color: black;
+    text-decoration: none;
+    cursor: default;
 }
 
 .title p {
@@ -56,5 +71,9 @@
 }
 .btn button:hover {
     transform: scale(1.05);
+}
+
+.desc {
+    text-align: center;
 }
 </style>
