@@ -80,7 +80,26 @@ import listComponent from '@/components/listComponent.vue';
                     </span>
                 </div>
             </div>
-            <div class="table" style="gap: 0.25rem !important">
+
+        </div>
+        <div class="other">
+            <div class="desc">
+                <h1>Descrição</h1>
+                <pre>Galaxy A15
+
+Tela super viva e brilhante.
+
+A tela Super AMOLED de 6,5 polegadas do Galaxy A15 traz uma nitidez vibrante mesmo sob luz solar
+direta com o Vision Booster, rolagem suave e taxa de atualização aprimorada de 90 Hz, além de brilho
+melhorado de até 800 nits e conforto durante todo o dia com a luz azul reduzida graças ao Eye
+Comfort Shield.
+
+Simplicidade equilibrada.
+
+Projetado para ser complete, o Galaxy A15 exibe sua estética refinada por meio de uma estrutura
+intuitiva, uma capa traseira brilhante e um layout de câmera organizado.</pre>
+            </div>
+            <div class="table other-table" style="gap: 0.25rem !important">
                 <h2>Meios de pagamento</h2>
                 <p>Catões de crédito</p>
                 <div class="options">
@@ -101,34 +120,60 @@ import listComponent from '@/components/listComponent.vue';
             </div>
         </div>
         <div class="relationed-div">
-        <listComponent title="Produtos relacionados" :itens="[
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', price: '1699.00', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-        ]" />
+            <listComponent title="Produtos relacionados" :itens="[
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', price: '1699.00', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+            ]" />
         </div>
         <div class="more-div">
-        <listComponent title="Quem viu este produto também comprou" :itens="[
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', price: '1699.00', to: '/product' },
-          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
-        ]" />
+            <listComponent title="Quem viu este produto também comprou" :itens="[
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', price: '1699.00', to: '/product' },
+                { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+            ]" />
         </div>
     </main>
     <FooterComponent />
 </template>
 <style scoped>
+.other {
+    display: flex;
+    width: 100%;
+}
+
+.other-table {
+    flex: 1;
+    margin: 1rem 0.8rem 0 0 !important;
+}
+
+.desc {
+    font-family: 'Inter', sans-serif;
+    margin: 2rem 0 0 2.5rem;
+    flex: 2.55;
+}
+
+.desc h1 {
+    margin: 1rem 0;
+    font-weight: 500;
+}
+
+.desc pre {
+    margin: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
 
 .relationed-div {
-    margin: 1rem 3rem;
+    margin: 1rem 0.8rem;
     border: 1px solid #909090;
 }
 
@@ -137,7 +182,7 @@ import listComponent from '@/components/listComponent.vue';
     justify-content: center;
     align-items: center;
     margin: 2rem 0 0 0;
-    
+
     background-color: #D9D9D9;
 }
 
@@ -150,6 +195,7 @@ import listComponent from '@/components/listComponent.vue';
 .card div {
     background-color: white !important;
 }
+
 .product-options-div {
     margin-top: 4rem;
 }
