@@ -29,7 +29,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
         <soloCardComponent img="/televisao.png" title="Oferta imperdível"
           desc="Smart Tv Samsung 32'' Hd Tizen T4300 Preto" oldPrice="1899.00" price="1149.00" promotion="0.39"
           to="/product" />
-        <listComponent :-more-to="'/product'" :-more-title="'Mostrar todas as ofertas'" :itens="[
+        <listComponent :-more-to="'/product'" :title="'Ofertas'" :-more-title="'Mostrar todas as ofertas'" :itens="[
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
@@ -41,7 +41,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
         <longCardComponent img="/televisao.png" title="Oferta imperdível" to="/product" toTitle="Ver mais" />
       </section>
       <section v-for="a in ['', '', '']" :key="a" class="buttons-group">
-        <listComponent :-more-to="'/product'" :-more-title="'Mostrar todas as ofertas'" :itens="[
+        <listComponent :-more-to="'/product'" :title="'Ofertas'" :-more-title="'Mostrar todas as ofertas'" :itens="[
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },

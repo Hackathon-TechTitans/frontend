@@ -41,7 +41,7 @@ function prevSlide() {
 <template>
     <div class="card">
         <div class="title">
-            <p>Ofertas <RouterLink :href="MoreTo">{{ MoreTitle }}</RouterLink></p>
+            <p>{{ title }} <RouterLink :href="MoreTo">{{ MoreTitle }}</RouterLink></p>
         </div>
         <div class="carousel" v-if="props.itens.length > 5">
             <button @click="prevSlide" :class="(currentSlide > 0)? 'arrow left' : 'arrow arrow-empty'"><span class="material-symbols-outlined">chevron_left</span></button>
@@ -55,7 +55,7 @@ function prevSlide() {
                     </div>
                     <div class="price">
                         <span class="old-price" v-if="item.promotion">R$ {{ String(item.oldPrice).replace('.',',') }}</span>
-                        <p>R$ {{ item.price }} <span v-if="item.promotion" class="promotion">{{ (item.promotion * 100).toFixed(0) }}%OFF</span></p>
+                        <p>R$ {{ String(item.price).replace('.',',') }} <span v-if="item.promotion" class="promotion">{{ (item.promotion * 100).toFixed(0) }}%OFF</span></p>
                     </div>
                 </RouterLink>
             </div>
@@ -71,7 +71,7 @@ function prevSlide() {
                     </div>
                     <div class="price">
                         <span class="old-price" v-if="item.promotion">R$ {{ String(item.oldPrice).replace('.',',') }}</span>
-                        <p>R$ {{ item.price }} <span v-if="item.promotion" class="promotion">{{ (item.promotion * 100).toFixed(0) }}%OFF</span></p>
+                        <p>R$ {{ String(item.price).replace('.',',') }} <span v-if="item.promotion" class="promotion">{{ (item.promotion * 100).toFixed(0) }}%OFF</span></p>
                     </div>
             </RouterLink>
         </div>
@@ -135,6 +135,7 @@ function prevSlide() {
 .carousel {
     display: flex;
     align-items: center;
+    background-color: white
 }
 
 .itens {
@@ -155,6 +156,7 @@ function prevSlide() {
     padding: 5px;
     cursor: pointer;
     transition: transform 0.2s;
+    background-color: white;
     border-radius: 8px;
     text-decoration: none;
     color: black;
