@@ -19,7 +19,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
 
             <div class="product" v-for="i in ['', '', '']" :key="i">
                 <div class="product-img">
-                    <img src="@/assets/images/celular.png" alt="Product Image">
+                    <img src="/celular.png" alt="Product Image">
                 </div>
                 <div class="product-title">
                     <p>Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM</p>
