@@ -100,6 +100,17 @@ import listComponent from '@/components/listComponent.vue';
                 </div>
             </div>
         </div>
+        <div class="relationed-div">
+        <listComponent title="Produtos relacionados" :itens="[
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', price: '1699.00', to: '/product' },
+          { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
+        ]" />
+        </div>
         <div class="more-div">
         <listComponent title="Quem viu este produto também comprou" :itens="[
           { img: '/locate.png', title: 'Samsung Galaxy A15 Dual SIM 4G 256GB Azul escuro 8GB RAM', oldPrice: '1899.00', price: '1699.00', promotion: '0.07', to: '/product' },
@@ -116,16 +127,22 @@ import listComponent from '@/components/listComponent.vue';
 </template>
 <style scoped>
 
+.relationed-div {
+    margin: 1rem 3rem;
+    border: 1px solid #909090;
+}
+
 .more-div {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2rem 0 0 0;
-    border-top: 2rem solid #D9D9D9;
+    
     background-color: #D9D9D9;
 }
 
-.card {
+.more-div .card {
+    border-top: 3rem solid #D9D9D9;
     background-color: #D9D9D9;
     padding: 0;
 }
