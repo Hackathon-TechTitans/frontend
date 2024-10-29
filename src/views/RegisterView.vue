@@ -1,7 +1,39 @@
 <script setup>
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
-import { RouterLink } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
+
+import { RouterLink, useRouter } from 'vue-router';
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+function register(i) {
+  try {
+    console.log(i); 
+    const data = new FormData(i.target);
+    authStore.registerUser({
+      first_name: data.get('first_name'),
+      family_name: data.get('family_name'),
+      cpf: data.get('cpf'),
+      birthdate_day: data.get('birthdate_day'),
+      birthdate_month: data.get('birthdate_month'),
+      birthdate_year: data.get('birthdate_year'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      password: data.get('password'),
+      password_confirm: data.get('password_confirm'),
+      marketing_communication: data.get('marketing_communication') === 'on',
+      terms_agreement: data.get('terms_agreement') === 'on',
+    });
+
+    alert('Usuário cadastrado com sucesso!');
+    router.push('/auth/login');
+} catch (error) {
+    alert(error);
+} 
+
+}
 
 </script>
 <template>
@@ -14,7 +46,7 @@ import { RouterLink } from 'vue-router';
             <h3>Criar minha conta</h3>
             <p>Informe os dados abaixo para criar sua conta</p>
         </section>
-        <form>
+        <form @submit.prevent="register">
             <div class="row">
                 <input type="text" id="first_name" name="first_name" placeholder="Nome*" required>
                 <input type="text" id="family_name" name="family_name" placeholder="Sobrenome*" required>

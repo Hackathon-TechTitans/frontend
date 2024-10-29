@@ -1,5 +1,17 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { useAuthStore } from '@/stores/auth';
+import { computed } from 'vue';
+
+const authStore = useAuthStore();
+
+const loggedInUsername = computed(() => `${t(authStore.currentUser.first_name)} ${t(authStore.currentUser.family_name)}`);
+const loggedIn = computed(() => authStore.isLoggedIn);
+
+function t(i) {
+  return i.toLowerCase().charAt(0).toUpperCase() + i.slice(1).toLowerCase();
+}
+
 </script>
 <template>
     <header>
@@ -34,10 +46,18 @@ import { RouterLink } from 'vue-router'
         </nav>
         <nav class="account-nav">
             <div>
-                <RouterLink class="account-btn" to="/auth/login">
+                <div v-if="loggedIn" style="display: flex;gap:0.5rem">
+                <RouterLink  class="account-btn logged" to="/auth/user">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <p>{{ loggedInUsername }}</p>
+                </RouterLink>
+                <button @click="authStore.logoutUser" class="account-btn">Sair</button>
+                </div>
+                <RouterLink v-else class="account-btn" to="/auth/login">
                     <h3>MINHA CONTA</h3>
                     <p>Entrar/Cadastro</p>
                 </RouterLink>
+                
             </div>
         </nav>
         <nav class="button-nav">
@@ -55,6 +75,27 @@ import { RouterLink } from 'vue-router'
     </header>
 </template>
 <style scoped>
+
+.account-btn.logged {
+    display: flex;
+    align-items: center;
+}
+
+.account-btn.logged p {
+    margin: 0;
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.account-btn.logged span {
+    font-size: 30px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
 .material-symbols-outlined {
     user-select: none;
     font-variation-settings:
