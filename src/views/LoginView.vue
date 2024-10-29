@@ -1,7 +1,28 @@
 <script setup>
 import HeaderComponent from '@/components/HeaderComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
-import { RouterLink } from 'vue-router';
+import { useAuthStore } from '@/stores/auth';
+
+import { RouterLink, useRouter } from 'vue-router';
+
+const authStore = useAuthStore();
+const router = useRouter();
+
+function login(i) {
+    i.preventDefault();
+    const data = new FormData(i.target);
+    try {
+    authStore.loginUser(
+        data.get('email'), 
+        data.get('password')
+    );
+    alert('Logado com sucesso!');
+    router.push('/');
+    }
+    catch (error) {
+        alert(error);
+    }
+}
 
 </script>
 <template>
@@ -15,7 +36,7 @@ import { RouterLink } from 'vue-router';
             <h3>Já tem uma conta?</h3>
             <p>Informe os dados abaixo para acessá-la</p>
         </section>
-        <form>
+        <form @submit.prevent="login">
             <div class="row">
                 <input type="email" id="email" name="email" placeholder="E-mail*" required>
             </div>
